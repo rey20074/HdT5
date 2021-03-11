@@ -69,9 +69,9 @@ def proceso(env, tiempro, NombreEtapa, RAM, Cantidad_Ram, Numero_de_Instru, velo
  
 #-----------------------------------DEFINICION DE VARIABLES---------------------------------
 
-velocidad = 6.0        # Velocidad que poseera el Procesador
+velocidad = 3.0        # Velocidad que poseera el Procesador
 Memoria_RAM = 100      # Cantidad de Memoria RAM que solicite el usuario
-Numero_Pro = 200       # Numero de procesos a Realizar
+Numero_Pro = 200      # Numero de procesos a Realizar
 tiempo_tot = 0.0       # Variable para el tiempo total que tardará un proceso
 tiempo=[]              # Array de los tiempos en los que se ejecutaron
  
@@ -80,7 +80,7 @@ tiempo=[]              # Array de los tiempos en los que se ejecutaron
 
 env = simpy.Environment()
 # Cola de tipo Resource para el CPU 
-cpu = simpy.Resource (env, capacity=1)
+cpu = simpy.Resource (env, capacity=2)
 # Cola de tipo Container para la RAM
 RAM = simpy.Container(env, init = Memoria_RAM, capacity = Memoria_RAM)
 # Cola de tipo Resource Wait para operaciones I/O
